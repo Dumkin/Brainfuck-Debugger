@@ -1,0 +1,45 @@
+{
+  "props": [],
+  "components": {
+    "fileChooser": {
+      "type": "script\\FileChooserScript",
+      "x": 32.0,
+      "y": 112.0,
+      "props": {
+        "filterName": "Все файлы",
+        "filterExtensions": "*.*",
+        "filterAny": "0"
+      }
+    },
+    "appViewer": {
+      "type": "script\\MacroScript",
+      "x": 112.0,
+      "y": 112.0,
+      "props": {}
+    },
+    "skipWhile": {
+      "type": "script\\MacroScript",
+      "x": 400.0,
+      "y": 32.0,
+      "props": {}
+    },
+    "skipIteration": {
+      "type": "script\\MacroScript",
+      "x": 304.0,
+      "y": 32.0,
+      "props": {}
+    },
+    "next": {
+      "type": "script\\MacroScript",
+      "x": 112.0,
+      "y": 32.0,
+      "props": {}
+    },
+    "drawTable": {
+      "type": "script\\MacroScript",
+      "x": 32.0,
+      "y": 32.0,
+      "props": {}
+    }
+  }
+}

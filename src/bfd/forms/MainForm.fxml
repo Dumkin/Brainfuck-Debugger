@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.paint.*?><?import javafx.scene.web.*?><?import javafx.geometry.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="640" styleClass="">
+  <children>
+    <TableView editable="false" fixedCellSize="-1" focusTraversable="false" id="table" layoutX="0" layoutY="0" prefHeight="296" prefWidth="640" styleClass="table-view " tableMenuButtonVisible="false">
+      <placeholder>
+        <Label/>
+      </placeholder>
+      <columns>
+        <TableColumn id="X" maxWidth="5000" minWidth="10" prefWidth="138" resizable="false" sortable="false" style="-fx-alignment: center-right; " text="" visible="true"/>
+        <TableColumn id="0" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="0" visible="true"/>
+        <TableColumn id="1" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="1" visible="true"/>
+        <TableColumn id="2" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="2" visible="true"/>
+        <TableColumn id="3" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="3" visible="true"/>
+        <TableColumn id="4" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="4" visible="true"/>
+        <TableColumn id="5" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="5" visible="true"/>
+        <TableColumn id="6" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="6" visible="true"/>
+        <TableColumn id="7" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="7" visible="true"/>
+        <TableColumn id="8" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="8" visible="true"/>
+        <TableColumn id="9" maxWidth="5000" minWidth="10" prefWidth="50" resizable="false" sortable="false" style="-fx-alignment: center-left; " text="9" visible="true"/>
+      </columns>
+    </TableView>
+    <Data cursor="DEFAULT" enabled="1" id="data-table" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_select" layoutX="8" layoutY="304" prefHeight="32" prefWidth="64" style="-fx-background-color: white;" styleClass="button jfx-button " text="Select" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_select" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_next" layoutX="544" layoutY="304" prefHeight="32" prefWidth="88" style="-fx-background-color: white;" styleClass="button jfx-button " text="&gt;" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_next" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_back" layoutX="504" layoutY="304" prefHeight="32" prefWidth="32" style="-fx-background-color: white;" styleClass="button jfx-button " text="&lt;" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="" id="data-button_back" visible="1"/>
+    <LabelEx alignment="TOP_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="app" layoutX="8" layoutY="344" prefHeight="56" prefWidth="616" styleClass="label " text="App: " textAlignment="LEFT" underline="false" wrapText="true">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-app" visible="1"/>
+    <LabelEx alignment="TOP_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="out" layoutX="8" layoutY="440" prefHeight="40" prefWidth="624" styleClass="label " text="Output: " textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-out" visible="1"/>
+    <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="false" id="in" layoutX="56" layoutY="400" prefColumnCount="12" prefHeight="32" prefWidth="576" promptText="" styleClass="text-input text-field " text="">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </TextField>
+    <Data cursor="DEFAULT" enabled="1" id="data-in" visible="1"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="true" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label_in" layoutX="8" layoutY="408" prefHeight="15.9609375" prefWidth="30.498046875" styleClass="label " text="Input:" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-label_in" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_skip_while" layoutX="328" layoutY="304" prefHeight="32" prefWidth="72" style="-fx-background-color: white;" styleClass="button jfx-button " text="Skip while" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_skip_while" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_skip_iteration" layoutX="408" layoutY="304" prefHeight="32" prefWidth="88" style="-fx-background-color: white;" styleClass="button jfx-button " text="Skip iteration" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_skip_iteration" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_run" layoutX="80" layoutY="304" prefHeight="32" prefWidth="48" style="-fx-background-color: white;" styleClass="button jfx-button " text="Run" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_run" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_on_start" layoutX="136" layoutY="304" prefHeight="32" prefWidth="64" style="-fx-background-color: white;" styleClass="button jfx-button " text="On start" textAlignment="LEFT" underline="false" wrapText="false">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </com.jfoenix.controls.JFXButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_on_start" visible="1"/>
+  </children>
+</AnchorPane>
