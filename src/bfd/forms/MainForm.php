@@ -22,7 +22,11 @@ class MainForm extends AbstractForm
      */
     function doButton_backAction(UXEvent $e = null)
     {    
-        
+        if ($GLOBALS['app_selected'] > 0) {
+            $this->back->call();
+            $this->drawTable->call();
+            $this->appViewer->call();
+        }
     }
 
     /**

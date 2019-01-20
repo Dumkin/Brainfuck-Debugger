@@ -1,6 +1,7 @@
 <?php
 namespace bfd\modules;
 
+use Error;
 use std, gui, framework, bfd;
 
 
@@ -160,5 +161,74 @@ class MainModule extends AbstractModule
         }
         
         $GLOBALS['input_index']++;
+    }
+
+    /**
+     * @event back.action 
+     */
+    function doBackAction(ScriptEvent $e = null)
+    {    
+        $GLOBALS['app_selected']--;
+        switch ($GLOBALS['app'][$GLOBALS['app_selected']]) {
+            case '>':
+                $GLOBALS['selected']--;
+                break;
+            case '<':
+                $GLOBALS['selected']++;
+                if (!isset($GLOBALS['memory'][$GLOBALS['selected']])) {
+                    $GLOBALS['memory'][$GLOBALS['selected']] = 0;
+                }
+                break;
+            case "+":
+                $GLOBALS['memory'][$GLOBALS['selected']]--;
+                break;
+            case "-":
+                $GLOBALS['memory'][$GLOBALS['selected']]++;
+                break;
+            case ".":
+                $this->out->text = ubstr($this->out->text, 0, -1);
+                break;
+            case ",":
+                //$GLOBALS['input_index']--;
+                UXDialog::showAndWait("Восстановить старую ячейку невозможно");
+                $GLOBALS['app_selected']++;
+                break;
+            case "[":
+                UXDialog::showAndWait("Использовать на циклах нельзя");
+                $GLOBALS['app_selected']++;
+                /*if ($GLOBALS['memory'][$GLOBALS['selected']] == 0) {
+                   $GLOBALS['app_stack']++;
+                    while ($GLOBALS['app_stack'] !== 0) {
+                        $GLOBALS['app_selected']++;
+                        if ($GLOBALS['app'][$GLOBALS['app_selected']] == '[')
+                            $GLOBALS['app_stack']++;
+                        if ($GLOBALS['app'][$GLOBALS['app_selected']] == ']')
+                            $GLOBALS['app_stack']--;
+                    }
+                } else {
+                    continue;
+                }*/
+                break;
+            case "]":
+                UXDialog::showAndWait("Использовать на циклах нельзя");
+                $GLOBALS['app_selected']++;
+                /*if ($GLOBALS['memory'][$GLOBALS['selected']] == 0) {
+                    continue;
+                } else {
+                    if ($GLOBALS['app'][$GLOBALS['app_selected']] == ']') {
+                        $GLOBALS['app_stack']++;
+                    }
+                    while ($GLOBALS['app_stack'] !== 0) {
+                        $GLOBALS['app_selected']--;
+                        if ($GLOBALS['app'][$GLOBALS['app_selected']] == '[')
+                            $GLOBALS['app_stack']--;
+                        if ($GLOBALS['app'][$GLOBALS['app_selected']] == ']')
+                            $GLOBALS['app_stack']++;
+                    }
+                    $GLOBALS['app_selected']--;
+                }*/
+                break;
+        }
+        
     }
 }

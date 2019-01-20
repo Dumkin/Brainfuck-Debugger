@@ -23,6 +23,12 @@
       "y": 112,
       "props": {}
     },
+    "back": {
+      "type": "script\\MacroScript",
+      "x": 176.0,
+      "y": 32.0,
+      "props": {}
+    },
     "next": {
       "type": "script\\MacroScript",
       "x": 112,
