@@ -1,10 +1,16 @@
 {
   "props": [],
   "components": {
+    "getInput": {
+      "type": "script\\MacroScript",
+      "x": 304.0,
+      "y": 112.0,
+      "props": {}
+    },
     "fileChooser": {
       "type": "script\\FileChooserScript",
-      "x": 32.0,
-      "y": 112.0,
+      "x": 32,
+      "y": 112,
       "props": {
         "filterName": "Все файлы",
         "filterExtensions": "*.*",
@@ -13,32 +19,32 @@
     },
     "appViewer": {
       "type": "script\\MacroScript",
-      "x": 112.0,
-      "y": 112.0,
-      "props": {}
-    },
-    "skipWhile": {
-      "type": "script\\MacroScript",
-      "x": 400.0,
-      "y": 32.0,
-      "props": {}
-    },
-    "skipIteration": {
-      "type": "script\\MacroScript",
-      "x": 304.0,
-      "y": 32.0,
+      "x": 112,
+      "y": 112,
       "props": {}
     },
     "next": {
       "type": "script\\MacroScript",
-      "x": 112.0,
-      "y": 32.0,
+      "x": 112,
+      "y": 32,
+      "props": {}
+    },
+    "skipIteration": {
+      "type": "script\\MacroScript",
+      "x": 304,
+      "y": 32,
+      "props": {}
+    },
+    "skipWhile": {
+      "type": "script\\MacroScript",
+      "x": 400,
+      "y": 32,
       "props": {}
     },
     "drawTable": {
       "type": "script\\MacroScript",
-      "x": 32.0,
-      "y": 32.0,
+      "x": 32,
+      "y": 32,
       "props": {}
     }
   }

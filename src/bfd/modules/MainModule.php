@@ -62,7 +62,7 @@ class MainModule extends AbstractModule
                 $this->out->text .= chr($GLOBALS['memory'][$GLOBALS['selected']]);
                 break;
             case ",":
-                //cin
+                $this->getInput->call();
                 break;
             case "[":
                 if ($GLOBALS['memory'][$GLOBALS['selected']] == 0) {
@@ -111,7 +111,7 @@ class MainModule extends AbstractModule
         
         $this->app->text .= " ( " . $GLOBALS['app'][$GLOBALS['app_selected']] . " ) ";
         
-        for ($i = $GLOBALS['app_selected']; $i < strlen($GLOBALS['app']); $i++) {
+        for ($i = $GLOBALS['app_selected'] + 1; $i < strlen($GLOBALS['app']); $i++) {
             $this->app->text .= $GLOBALS['app'][$i];
         }
     }
@@ -141,5 +141,24 @@ class MainModule extends AbstractModule
         while ($closeWhile >= $GLOBALS['app_selected']) {
             $this->next->call();
         }
+    }
+
+    /**
+     * @event getInput.action 
+     */
+    function doGetInputAction(ScriptEvent $e = null)
+    {    
+        $in = explode(' ', $this->in->text)[$GLOBALS['input_index']];
+        
+        $inT = $in[0];
+        $inV = substr($in, 1);
+        
+        if ($inT === "i") {
+            $GLOBALS['memory'][$GLOBALS['selected']] = intval($inV);
+        } else {
+            $GLOBALS['memory'][$GLOBALS['selected']] = ord($inV);
+        }
+        
+        $GLOBALS['input_index']++;
     }
 }

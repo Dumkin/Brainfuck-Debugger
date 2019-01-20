@@ -40,6 +40,8 @@ class MainForm extends AbstractForm
         
         $GLOBALS['app_stack'] = 0;
         
+        $GLOBALS['input_index'] = 0;
+        
         $GLOBALS['memory'] = [0];
         $GLOBALS['selected'] = 0;
         
@@ -103,6 +105,14 @@ class MainForm extends AbstractForm
         $this->drawTable->call();
         $this->appViewer->call();
         $this->out->text = "Output: ";
+    }
+
+    /**
+     * @event button.action 
+     */
+    function doButtonAction(UXEvent $e = null)
+    {    
+        UXDialog::showAndWait("Формат ввода:\n\n1) Каждый вводимый символ через пробел\n2) Перед вводом числа 'i', перед символом 'c'\n\nПример: i23 c3 cF");
     }
 
 }
