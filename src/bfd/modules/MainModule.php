@@ -2,12 +2,10 @@
 namespace bfd\modules;
 
 use Error;
-use std, gui, framework, bfd;
-
+use std, gui, framework, Regex, bfd;
 
 class MainModule extends AbstractModule
 {
-
     /**
      * @event drawTable.action 
      */
@@ -230,5 +228,75 @@ class MainModule extends AbstractModule
                 break;
         }
         
+    }
+
+    /**
+     * @event interfaceCheck.action 
+     */
+    function doInterfaceCheckAction(ScriptEvent $e = null)
+    {
+        $nextCode = substr($GLOBALS['app'], $GLOBALS['app_selected']);
+        
+        $this->button_skip_iteration->enabled = true;
+        $this->button_skip_while->enabled = true;
+        if (!Regex::match('\[|\]', $nextCode) or !$GLOBALS['app_open']) {
+            $this->button_skip_iteration->enabled = false;
+            $this->button_skip_while->enabled = false;
+        }
+        
+        $this->button_back->enabled = true;
+        if ($GLOBALS['app_selected'] <= 0) {
+            $this->button_back->enabled = false;
+        }
+        
+        $this->button_next->enabled = true;
+        if ($GLOBALS['app_selected'] >= strlen($GLOBALS['app']) or !$GLOBALS['app_open']) {
+            $this->button_next->enabled = false;
+        }
+        
+        $this->drawTable->call();
+        $this->appViewer->call();
+    }
+
+    /**
+     * @event appClear.action 
+     */
+    function doAppClearAction(ScriptEvent $e = null)
+    {
+        $GLOBALS['app_open'] = false;
+        $GLOBALS['app'] = "";
+        $GLOBALS['app_selected'] = 0;
+        
+        $GLOBALS['app_stack'] = 0;
+        
+        $GLOBALS['input_index'] = 0;
+        
+        $GLOBALS['memory'] = [0];
+        $GLOBALS['selected'] = 0;
+    }
+    
+    /**
+     * @event appBegin.action 
+     */
+    function doAppBeginAction(ScriptEvent $e = null)
+    {    
+        $GLOBALS['app_selected'] = 0;
+        
+        $GLOBALS['app_stack'] = 0;
+        
+        $GLOBALS['input_index'] = 0;
+        
+        $GLOBALS['memory'] = [0];
+        $GLOBALS['selected'] = 0;
+    }
+    
+    /**
+     * @event appEnd.action 
+     */
+    function doAppEndAction(ScriptEvent $e = null)
+    {    
+        while ($GLOBALS['app_selected'] < strlen($GLOBALS['app'])) {
+            $this->next->call();
+        }
     }
 }

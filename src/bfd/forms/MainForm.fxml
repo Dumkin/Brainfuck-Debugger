@@ -37,7 +37,7 @@
         <Font name="System Regular" size="12"/>
       </font>
     </com.jfoenix.controls.JFXButton>
-    <Data cursor="DEFAULT" enabled="" id="data-button_back" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_back" visible="1"/>
     <LabelEx alignment="TOP_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="app" layoutX="8" layoutY="344" prefHeight="56" prefWidth="616" styleClass="label " text="App: " textAlignment="LEFT" textFill="#000000" underline="false" wrapText="true">
       <font>
         <Font name="System Regular" size="12"/>
@@ -79,18 +79,18 @@
       </font>
     </com.jfoenix.controls.JFXButton>
     <Data cursor="DEFAULT" enabled="1" id="data-button_skip_iteration" visible="1"/>
-    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_run" layoutX="80" layoutY="304" prefHeight="32" prefWidth="48" style="-fx-background-color: white;" styleClass="button jfx-button " text="Run" textAlignment="LEFT" textFill="#000000" underline="false" wrapText="false">
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_to_end" layoutX="152" layoutY="304" prefHeight="32" prefWidth="56" style="-fx-background-color: white;" styleClass="button jfx-button " text="To end" textAlignment="LEFT" textFill="#000000" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="12"/>
       </font>
     </com.jfoenix.controls.JFXButton>
-    <Data cursor="DEFAULT" enabled="1" id="data-button_run" visible="1"/>
-    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_on_start" layoutX="136" layoutY="304" prefHeight="32" prefWidth="64" style="-fx-background-color: white;" styleClass="button jfx-button " text="On start" textAlignment="LEFT" textFill="#000000" underline="false" wrapText="false">
+    <Data cursor="DEFAULT" enabled="1" id="data-button_to_end" visible="1"/>
+    <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button_to_begin" layoutX="80" layoutY="304" prefHeight="32" prefWidth="64" style="-fx-background-color: white;" styleClass="button jfx-button " text="To begin" textAlignment="LEFT" textFill="#000000" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="12"/>
       </font>
     </com.jfoenix.controls.JFXButton>
-    <Data cursor="DEFAULT" enabled="1" id="data-button_on_start" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-button_to_begin" visible="1"/>
     <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="button" layoutX="528" layoutY="400" prefHeight="32" prefWidth="104" style="-fx-background-color: white;" styleClass="button jfx-button " text="Info" textAlignment="LEFT" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="12"/>

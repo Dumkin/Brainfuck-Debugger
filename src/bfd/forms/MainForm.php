@@ -13,8 +13,7 @@ class MainForm extends AbstractForm
     function doButton_nextAction(UXEvent $e = null)
     {    
         $this->next->call();
-        $this->drawTable->call();
-        $this->appViewer->call();
+        $this->interfaceCheck->call();
     }
 
     /**
@@ -22,11 +21,8 @@ class MainForm extends AbstractForm
      */
     function doButton_backAction(UXEvent $e = null)
     {    
-        if ($GLOBALS['app_selected'] > 0) {
-            $this->back->call();
-            $this->drawTable->call();
-            $this->appViewer->call();
-        }
+        $this->back->call();
+        $this->interfaceCheck->call();
     }
 
     /**
@@ -39,15 +35,7 @@ class MainForm extends AbstractForm
             return;
         }
         
-        $GLOBALS['app'] = "";
-        $GLOBALS['app_selected'] = 0;
-        
-        $GLOBALS['app_stack'] = 0;
-        
-        $GLOBALS['input_index'] = 0;
-        
-        $GLOBALS['memory'] = [0];
-        $GLOBALS['selected'] = 0;
+        $this->appClear->call();
         
         $f = fopen($this->fileChooser->file, 'r');
         $f->eachLine(function ($line) {
@@ -55,8 +43,9 @@ class MainForm extends AbstractForm
         });
         fclose($f);
         
-        $this->drawTable->call();
-        $this->appViewer->call();
+        $GLOBALS['app_open'] = true;
+        
+        $this->interfaceCheck->call();
     }
 
     /**
@@ -66,8 +55,7 @@ class MainForm extends AbstractForm
     {
         $this->skipWhile->call();
         
-        $this->drawTable->call();
-        $this->appViewer->call();
+        $this->interfaceCheck->call();
     }
 
     /**
@@ -77,37 +65,28 @@ class MainForm extends AbstractForm
     {
         $this->skipIteration->call();
         
-        $this->drawTable->call();
-        $this->appViewer->call();
+        $this->interfaceCheck->call();
     }
 
     /**
-     * @event button_run.action 
+     * @event button_to_end.action 
      */
-    function doButton_runAction(UXEvent $e = null)
+    function doButton_to_endAction(UXEvent $e = null)
     {
-        while ($GLOBALS['app_selected'] < strlen($GLOBALS['app'])) {\
-            $this->next->call();
-        }
+        $this->appEnd->call();
         
-        $this->drawTable->call();
-        $this->appViewer->call();
+        $this->interfaceCheck->call();
     }
 
     /**
-     * @event button_on_start.action 
+     * @event button_to_begin.action 
      */
-    function doButton_on_startAction(UXEvent $e = null)
+    function doButton_to_beginAction(UXEvent $e = null)
     {
-        $GLOBALS['app_selected'] = 0;
+        $this->appBegin->call();
         
-        $GLOBALS['app_stack'] = 0;
+        $this->interfaceCheck->call();
         
-        $GLOBALS['memory'] = [0];
-        $GLOBALS['selected'] = 0;
-        
-        $this->drawTable->call();
-        $this->appViewer->call();
         $this->out->text = "Output: ";
     }
 
@@ -118,5 +97,6 @@ class MainForm extends AbstractForm
     {    
         UXDialog::showAndWait("Формат ввода:\n\n1) Каждый вводимый символ через пробел\n2) Перед вводом числа 'i', перед символом 'c'\n\nПример: i23 c3 cF");
     }
+
 
 }
