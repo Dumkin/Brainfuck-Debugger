@@ -3,78 +3,78 @@
   "components": {
     "appViewer": {
       "type": "script\\MacroScript",
-      "x": 48.0,
-      "y": 320.0,
+      "x": 48,
+      "y": 320,
       "props": {}
     },
     "appEnd": {
       "type": "script\\MacroScript",
-      "x": 448.0,
-      "y": 192.0,
-      "props": {}
-    },
-    "appBegin": {
-      "type": "script\\MacroScript",
-      "x": 448.0,
-      "y": 112.0,
-      "props": {}
-    },
-    "skipIteration": {
-      "type": "script\\MacroScript",
-      "x": 352.0,
-      "y": 112.0,
+      "x": 448,
+      "y": 192,
       "props": {}
     },
     "back": {
       "type": "script\\MacroScript",
-      "x": 160.0,
-      "y": 112.0,
+      "x": 160,
+      "y": 112,
+      "props": {}
+    },
+    "skipIteration": {
+      "type": "script\\MacroScript",
+      "x": 352,
+      "y": 112,
+      "props": {}
+    },
+    "appBegin": {
+      "type": "script\\MacroScript",
+      "x": 448,
+      "y": 112,
       "props": {}
     },
     "drawTable": {
       "type": "script\\MacroScript",
-      "x": 48.0,
-      "y": 112.0,
+      "x": 48,
+      "y": 112,
       "props": {}
     },
-    "interfaceCheck": {
+    "getInput": {
       "type": "script\\MacroScript",
-      "x": 48.0,
-      "y": 32.0,
-      "props": {}
-    },
-    "appClear": {
-      "type": "script\\MacroScript",
-      "x": 448.0,
-      "y": 32.0,
-      "props": {}
-    },
-    "skipWhile": {
-      "type": "script\\MacroScript",
-      "x": 352.0,
-      "y": 32,
-      "props": {}
-    },
-    "next": {
-      "type": "script\\MacroScript",
-      "x": 160.0,
+      "x": 256,
       "y": 32,
       "props": {}
     },
     "fileChooser": {
       "type": "script\\FileChooserScript",
-      "x": 560.0,
-      "y": 32.0,
+      "x": 560,
+      "y": 32,
       "props": {
         "filterName": "Все файлы",
         "filterExtensions": "*.*",
         "filterAny": "0"
       }
     },
-    "getInput": {
+    "next": {
       "type": "script\\MacroScript",
-      "x": 256.0,
-      "y": 32.0,
+      "x": 160,
+      "y": 32,
+      "props": {}
+    },
+    "skipWhile": {
+      "type": "script\\MacroScript",
+      "x": 352,
+      "y": 32,
+      "props": {}
+    },
+    "appClear": {
+      "type": "script\\MacroScript",
+      "x": 448,
+      "y": 32,
+      "props": {}
+    },
+    "interfaceCheck": {
+      "type": "script\\MacroScript",
+      "x": 48,
+      "y": 32,
       "props": {}
     }
   }

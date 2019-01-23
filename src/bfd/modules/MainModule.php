@@ -11,8 +11,8 @@ class MainModule extends AbstractModule
      */
     function doDrawTableAction(ScriptEvent $e = null)
     {
-        $lines = intdiv($GLOBALS['memory'], 10);
-        $rows = $GLOBALS['memory'] % 10;
+        $lines = intdiv(count($GLOBALS['memory']) - 1, 10);
+        $rows = (count($GLOBALS['memory']) - 1) % 10;
     
         $lineSelected = intdiv($GLOBALS['selected'], 10);
         $rowSelected = $GLOBALS['selected'] % 10;
